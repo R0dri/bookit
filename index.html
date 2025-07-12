@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gantt de Reservas</title>
+    <script src="https://cdn.anychart.com/releases/v8/locales/es-bo.js"></script>
+    <script
+      src="https://cdn.anychart.com/releases/8.13.0/js/anychart-base.min.js"
+      type="text/javascript"
+    ></script>
+    <script
+      src="https://cdn.anychart.com/releases/8.13.0/js/anychart-core.min.js"
+      type="text/javascript"
+    ></script>
+    <script
+      src="https://cdn.anychart.com/releases/8.13.0/js/anychart-gantt.min.js"
+      type="text/javascript"
+    ></script>
+    <script src="https://cdn.anychart.com/releases/8.13.1/locales/es-bo.js"></script>
+    <script src="script.js"></script>
+    <script src="dataSoruce.js"></script>
+    <script src="unavailable_periods.js"></script>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <h2>Sistema de Reservas (Timeline)</h2>
+    <div id="container"></div>
+    <link href="https://cdn.jsdelivr.net/npm/@n8n/chat/dist/style.css" rel="stylesheet" />
+    <script type="module">
+	    import { createChat } from 'https://cdn.jsdelivr.net/npm/@n8n/chat/dist/chat.bundle.es.js';
+
+	    createChat({
+		    webhookUrl: 'https://n8n.5sites.co/webhook/44c4ed92-4415-4c6a-8f39-fa520fad3078/chat',
+        showWelcomeScreen: false,
+	      defaultLanguage: 'es',
+	      initialMessages: [
+		      'Hola, bienvenido/a! 👋',
+		      'Soy Carlitos, ¿Como puedo ayudarte el dia de hoy?'
+	      ],
+	      i18n: {
+		      es: {
+			      title: 'Asistente Virtual - Clínica Salud Integral',
+            subtitle: "",
+			      // subtitle: "Estamos aquí para ayudarte con tus necesidades de salud",
+            // footer: "",
+			      getStarted: 'New Conversation',
+			      inputPlaceholder: 'Por favor, describe tu consulta:',
+		      },
+	      },
+	    });
+    </script>
+  </body>
+</html>
