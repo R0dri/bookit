@@ -1,0 +1,7 @@
+{
+  "name": "Book It!",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "react-vite"
+}
