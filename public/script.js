@@ -82,10 +82,10 @@ buttons.selected().background().fill({
 });   
 
 
-  chart.edit(true); // enables general editing
-  chart.getTimeline().edit(true);
-  chart.getTimeline().periods().edit(true);
-  chart.dataGrid().edit(true);
+  // chart.edit(true); // enables general editing
+  // chart.getTimeline().edit(true);
+  // chart.getTimeline().periods().edit(true);
+  // chart.dataGrid().edit(true);
 
 
   // Escala y encabezado
