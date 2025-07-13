@@ -6,9 +6,10 @@ import { defineConfig } from 'vite'
 
 // https://vitejs.dev/config/
 export default defineConfig({
+  base: '/bookit/',
   plugins: [
-    react(),
-    legacy()
+    react()
+//    legacy()
   ],
   test: {
     globals: true,
