@@ -1,6 +1,6 @@
 {
-  "name": "Gantt de Reservas",
-  "short_name": "Reservas",
+  "name": "Gestor de Reservas",
+  "short_name": "Book It!",
   "start_url": ".",
   "display": "standalone",
   "background_color": "#ffffff",
