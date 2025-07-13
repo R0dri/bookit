@@ -4,23 +4,23 @@
   "icons": [
     {
       "src": "favicon.png",
-      "sizes": "64x64 32x32 24x24 16x16",
+      "sizes": "64x64",
       "type": "image/x-icon"
     }
   ],
   "screenshots": [    
    {
 
-     "src": "favicon.png",
-      "sizes": "64x64",
+     "src": "screenshot.png",
+      "sizes": "512x512",
       "type": "image/png",
       "form_factor": "wide",
       "label": "Application"
     },
    {
 
-     "src": "favicon.png",
-      "sizes": "64x64",
+     "src": "screenshot.png",
+      "sizes": "512x512",
       "type": "image/png",
       "form_factor": "narrow",
       "label": "Application"
