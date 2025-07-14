@@ -4,7 +4,8 @@
     <meta charset="utf-8" />
     <title>Ionic App</title>
     
-    <base href="/bookit" />
+    <base href="/" />
+    <!-- <IonReactRouter basename="/"> -->
     
     <meta name="color-scheme" content="light dark" />
     <meta
@@ -14,16 +15,20 @@
     <meta name="format-detection" content="telephone=no" />
     <meta name="msapplication-tap-highlight" content="no" />
     
-    <link rel="manifest" href="/bookit/manifest.json" />
+    <link rel="manifest" href="/manifest.json" />
     
-    <link rel="shortcut icon" type="image/png" href="/bookit/favicon.png" />
+    <link rel="shortcut icon" type="image/png" href="/favicon.png" />
     
     <!-- add to homescreen for ios -->
     <meta name="mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-title" content="Ionic App" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black" />
-    <script type="module" crossorigin src="/bookit/assets/index-C9DQGaWl.js"></script>
-    <link rel="stylesheet" crossorigin href="/bookit/assets/index-ChLP8eOH.css">
+
+    <script src="https://cdn.anychart.com/releases/8.11.0/js/anychart-bundle.min.js"></script>
+<script src="dataSource.js"></script>
+
+    <script type="module" crossorigin src="/assets/index-D39-teXz.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-BB3VBCbr.css">
   </head>
   <body>
     <div id="root"></div>

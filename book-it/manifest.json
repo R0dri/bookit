@@ -1,31 +1,31 @@
 {
-  "short_name": "Ionic App",
-  "name": "My Ionic App",
+  "short_name": "Book It!",
+  "name": "Resources Booking App",
   "icons": [
     {
       "src": "favicon.png",
-      "sizes": "64x64 32x32 24x24 16x16",
-      "type": "image/x-icon"
+      "sizes": "1024x1024",
+      "type": "image/png"
     }
   ],
   "screenshots": [    
    {
 
-     "src": "favicon.png",
-      "sizes": "64x64",
+     "src": "screenshot.png",
+      "sizes": "512x512",
       "type": "image/png",
       "form_factor": "wide",
       "label": "Application"
     },
    {
 
-     "src": "favicon.png",
-      "sizes": "64x64",
+     "src": "screenshot.png",
+      "sizes": "512x512",
       "type": "image/png",
       "form_factor": "narrow",
       "label": "Application"
     }
-  ]
+  ],
   "start_url": ".",
   "display": "standalone",
   "theme_color": "#ffffff",

@@ -2,10 +2,15 @@ import { IonButtons, IonContent, IonHeader, IonMenuButton, IonPage, IonTitle, Io
 import { useParams } from 'react-router';
 import ExploreContainer from '../components/ExploreContainer';
 import './Page.css';
+type PageProps = {
+  name: string;
+};
 
-const Page: React.FC = () => {
+const Page: React.FC<PageProps> = ({ name }) => {
+// const Page: React.FC = () => {
 
-  const { name } = useParams<{ name: string; }>();
+//   const { name } = useParams<{ name: string; }>();
+console.log("THE NAME",name);
 
   return (
     <IonPage>
@@ -18,7 +23,7 @@ const Page: React.FC = () => {
         </IonToolbar>
       </IonHeader>
 
-      <IonContent fullscreen>
+    <IonContent fullscreen scrollY={false} forceOverscroll={false}>
         <IonHeader collapse="condense">
           <IonToolbar>
             <IonTitle size="large">{name}</IonTitle>

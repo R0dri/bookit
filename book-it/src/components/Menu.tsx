@@ -11,8 +11,10 @@ import {
 } from '@ionic/react';
 
 import { useLocation } from 'react-router-dom';
-import { archiveOutline, archiveSharp, bookmarkOutline, heartOutline, heartSharp, mailOutline, mailSharp, paperPlaneOutline, paperPlaneSharp, trashOutline, trashSharp, warningOutline, warningSharp } from 'ionicons/icons';
+import { archiveOutline, archiveSharp, bookmarkOutline, calendarOutline, calendarSharp, constructOutline, constructSharp, cube, cubeOutline, cubeSharp, heartOutline, heartSharp, mailOutline, mailSharp, paperPlaneOutline, paperPlaneSharp, peopleOutline, peopleSharp, todayOutline, todaySharp, trashOutline, trashSharp, warningOutline, warningSharp } from 'ionicons/icons';
 import './Menu.css';
+
+import { useHistory } from 'react-router-dom';
 
 interface AppPage {
   url: string;
@@ -23,58 +25,71 @@ interface AppPage {
 
 const appPages: AppPage[] = [
   {
-    title: 'Inbox',
-    url: '/folder/Inbox',
-    iosIcon: mailOutline,
-    mdIcon: mailSharp
+    title: 'My Agenda',
+    url: '/Agenda',
+    iosIcon: todayOutline,
+    mdIcon: todaySharp
   },
   {
-    title: 'Outbox',
-    url: '/folder/Outbox',
-    iosIcon: paperPlaneOutline,
-    mdIcon: paperPlaneSharp
+    title: 'Reservations',
+    url: '/',
+    iosIcon: calendarOutline,
+    mdIcon: calendarSharp
   },
   {
-    title: 'Favorites',
-    url: '/folder/Favorites',
-    iosIcon: heartOutline,
-    mdIcon: heartSharp
+    title: 'Resources',
+    url: '/Resources',
+    iosIcon: cubeOutline,
+    mdIcon: cubeSharp 
   },
   {
-    title: 'Archived',
-    url: '/folder/Archived',
-    iosIcon: archiveOutline,
-    mdIcon: archiveSharp
+    title: 'Services',
+    url: '/Services',
+    iosIcon: constructOutline,
+    mdIcon: constructSharp
   },
   {
-    title: 'Trash',
-    url: '/folder/Trash',
-    iosIcon: trashOutline,
-    mdIcon: trashSharp
-  },
-  {
-    title: 'Spam',
-    url: '/folder/Spam',
-    iosIcon: warningOutline,
-    mdIcon: warningSharp
+    title: 'Clients',
+    url: '/Clients',
+    iosIcon: peopleOutline,
+    mdIcon: peopleSharp 
   }
 ];
 
 const labels = ['Family', 'Friends', 'Notes', 'Work', 'Travel', 'Reminders'];
 
 const Menu: React.FC = () => {
+
+  const history = useHistory();
   const location = useLocation();
+
+  const route = (e: React.MouseEvent<HTMLIonItemElement>, url: string) => {
+    e.preventDefault();
+
+    const isSame = location.pathname === url;
+    const ts = Date.now();
+
+    localStorage.setItem('path', url);
+    window.location.reload();
+    if (isSame) {
+      // Reload by adding query param
+    //   history.replace(`${url}?r=${ts}`);
+    } else {
+      // Navigate normally
+    //   history.push(url);
+    }
+  };
 
   return (
     <IonMenu contentId="main" type="overlay">
       <IonContent>
         <IonList id="inbox-list">
-          <IonListHeader>Inbox</IonListHeader>
-          <IonNote>hi@ionicframework.com</IonNote>
+          <IonListHeader>Book It!</IonListHeader>
+          <IonNote>Resource Reservations</IonNote>
           {appPages.map((appPage, index) => {
             return (
               <IonMenuToggle key={index} autoHide={false}>
-                <IonItem className={location.pathname === appPage.url ? 'selected' : ''} routerLink={appPage.url} routerDirection="none" lines="none" detail={false}>
+                <IonItem className={location.pathname === appPage.url ? 'selected' : ''} onClick={(e)=>route(e,appPage.url)}  routerDirection="none" lines="none" detail={false}>
                   <IonIcon aria-hidden="true" slot="start" ios={appPage.iosIcon} md={appPage.mdIcon} />
                   <IonLabel>{appPage.title}</IonLabel>
                 </IonItem>
@@ -83,7 +98,7 @@ const Menu: React.FC = () => {
           })}
         </IonList>
 
-        <IonList id="labels-list">
+        {/* <IonList id="labels-list">
           <IonListHeader>Labels</IonListHeader>
           {labels.map((label, index) => (
             <IonItem lines="none" key={index}>
@@ -91,7 +106,7 @@ const Menu: React.FC = () => {
               <IonLabel>{label}</IonLabel>
             </IonItem>
           ))}
-        </IonList>
+        </IonList> */}
       </IonContent>
     </IonMenu>
   );

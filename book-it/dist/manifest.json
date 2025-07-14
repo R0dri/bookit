@@ -3,7 +3,7 @@
   "name": "Resources Booking App",
   "icons": [
     {
-      "src": "favicon.png",
+     "src": "screenshot.png",
       "sizes": "1024x1024",
       "type": "image/png"
     }
@@ -12,7 +12,7 @@
    {
 
      "src": "screenshot.png",
-      "sizes": "512x512",
+      "sizes": "1024x1024",
       "type": "image/png",
       "form_factor": "wide",
       "label": "Application"
@@ -20,7 +20,7 @@
    {
 
      "src": "screenshot.png",
-      "sizes": "512x512",
+      "sizes": "1024x1024",
       "type": "image/png",
       "form_factor": "narrow",
       "label": "Application"

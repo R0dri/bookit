@@ -34,21 +34,45 @@ import '@ionic/react/css/palettes/dark.system.css';
 /* Theme variables */
 import './theme/variables.css';
 
+import Reservations from './pages/Reservations';
+import Resources from './pages/Resources';
+
 setupIonicReact();
 
 const App: React.FC = () => {
+    console.log("VAR FORM STORAGE",localStorage.getItem('path'));
+    var path = localStorage.getItem('path');
+
   return (
     <IonApp>
       <IonReactRouter>
         <IonSplitPane contentId="main">
           <Menu />
-          <IonRouterOutlet id="main">
+          <IonRouterOutlet id="main" animated={false}>
             <Route path="/" exact={true}>
+            {(() => {
+                switch(path){
+                    case null:
+                    case "/":
+                        return <Reservations />
+                    case "/Resources":
+                        // return <Resources />
+                        return <Page name={path.split('/')[1]} />
+                    default:
+                        return <Page name={path.split('/')[1]} />
+                } 
+            })()}
+                {/* <Reservations /> */}
+            </Route>
+            {/* <Route path="/:name" exact={true}>
+                <Reservations />
+            </Route> */}
+            {/* <Route path="/" exact={true}>
               <Redirect to="/folder/Inbox" />
-            </Route>
-            <Route path="/folder/:name" exact={true}>
+            </Route> */}
+            {/* <Route path="/folder/:name" exact={true}>
               <Page />
-            </Route>
+            </Route> */}
           </IonRouterOutlet>
         </IonSplitPane>
       </IonReactRouter>

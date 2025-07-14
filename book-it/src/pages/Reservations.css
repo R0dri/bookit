@@ -12,3 +12,17 @@ ion-header {
 .header-collapse {
   --ion-safe-area-top: 20px; /* adjust if needed */
 }
+ion-content {
+  --padding-top: env(safe-area-inset-top);
+}
+
+/* #container {
+  width: 100vw;
+  height: 50vh;
+  min-height: 600px;
+  padding: 20px;
+  box-sizing: border-box;
+} */
+.anychart-credits{
+    display:none;
+}
